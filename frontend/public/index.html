@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reportes Verdes</title>
+</head>
+<body>
+    <h1>Reportar un Problema Ambiental</h1>
+    <form id="reportForm">
+        <label>Tipo:</label><br>
+        <select name="type">
+            <option value="Fuga de agua">Fuga de agua</option>
+            <option value="Luces encendidas">Luces encendidas</option>
+            <option value="Basura mal dispuesta">Basura mal dispuesta</option>
+        </select><br>
+        <label>Ubicación:</label><br>
+        <input type="text" name="location"><br>
+        <label>Descripción:</label><br>
+        <textarea name="description"></textarea><br>
+        <button type="submit">Enviar</button>
+    </form>
+    <script>
+        const form = document.getElementById('reportForm');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const data = {
+                type: form.type.value,
+                location: form.location.value,
+                description: form.description.value
+            };
+            await fetch('http://localhost:3000/api/reports', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            alert('Reporte enviado');
+        });
+    </script>
+</body>
+</html>

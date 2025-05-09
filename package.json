@@ -8,11 +8,19 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "mysql2": "^3.14.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/escalona312/sistema-de-reportes-verdes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/escalona312/sistema-de-reportes-verdes/issues"
+  },
+  "homepage": "https://github.com/escalona312/sistema-de-reportes-verdes#readme",
+  "description": ""
 }
